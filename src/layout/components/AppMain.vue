@@ -7,10 +7,13 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 export default {
   name: 'AppMain',
+
   computed: {
-    key() {
+    ...mapGetters(['sidebar']),
+    key () {
       return this.$route.path
     }
   }
@@ -25,7 +28,7 @@ export default {
   position: relative;
   overflow: hidden;
 }
-.fixed-header+.app-main {
+.fixed-header + .app-main {
   padding-top: 50px;
 }
 </style>
